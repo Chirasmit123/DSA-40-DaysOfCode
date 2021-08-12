@@ -1,0 +1,323 @@
+DAY-1 DSA QUESTIONS:
+Q1) Check from 2 numbers which is greater.
+Solution:
+import java.util.Scanner;
+
+public class Question01 {
+// Q. Check from 2 numbers which is greater - num1 or num2 
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter two numbers:");
+		double a = sc.nextDouble();
+		double b = sc.nextDouble();
+		if (a>b) {
+			System.out.println(a + " is greater than " + b);
+		}
+		else {
+			System.out.println(b + " is greater than " + a);
+		}
+     sc.close();
+	}
+
+}
+
+Q2) Check if a number lies between 10 and 90
+Solution:
+import java.util.Scanner;
+
+public class Question02 {
+// Q. Check if a number lies between 10 and 90
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number to check:");
+		float n = sc.nextFloat();
+		if ((n>10) && (n<90)) {
+			System.out.println("The number lies between 10 and 90");
+		}
+		else {
+			System.out.println("The number does not lie between 10 and 90");
+		}
+    sc.close();
+	}
+
+}
+
+Q3) Find the greater of 3 numbers.
+Solution:
+import java.util.Scanner;
+
+public class Question03 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter three numbers to check:");
+		double a = sc.nextDouble();
+		double b = sc.nextDouble();
+		double c = sc.nextDouble();
+		if ((a>b) && (a>c)) {
+			System.out.println(a + " is greater.");
+		}
+		else if ((b>a) && (b>c)) {
+			System.out.println(b + " is greater");
+		}
+		else {
+			System.out.println(c + " is greater");
+		}
+		sc.close();
+	}
+
+}
+
+Q4) Check if a year is a leap year or not.
+Solution:
+import java.util.Scanner;
+
+public class Question04 {
+// Q. Check if a year is leap year or not
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the year:");
+		int y = sc.nextInt();
+		if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) {
+			System.out.println(y + " is a leap year.");
+		}
+		else {
+			System.out.println(y + " is not a leap year");
+		}
+		sc.close();
+
+	}
+
+}
+
+Q5) Print the factorial of a number
+Solution:
+import java.util.Scanner;
+
+public class Question05 {
+// Q. Print the factorial of a number.
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number whose factorial you want:");
+		int m = sc.nextInt();
+		double fact = 1;
+		for (int i=1; i<=m; i++ ) {
+			fact *= i;
+		}
+		System.out.println("Factorial of " + m + " is " + fact);
+		sc.close();
+
+	}
+
+}
+
+Q6) Print the factors of a given number.
+Solution:
+import java.util.Scanner;
+
+public class Question06 {
+
+	public static void main(String[] args) {
+// Q. Print the factors of a given number
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number whose factors you want:");
+		int n = sc.nextInt();
+		for (int i =1; i<=n; i++) {
+			if(n%i == 0) {
+				System.out.print(i + " ");
+			}
+		}
+		sc.close();
+	}
+
+}
+
+Q7) Check if a number is a perfect number.
+Solution:
+import java.util.Scanner;
+
+public class Question07 {
+// Q. Check if a number is perfect number (sum of the factors is equal to the number)
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number to ckeck");
+		int n = sc.nextInt();
+		int sum = 0;
+		for (int i = 1; i<n; i++) {
+			if (n%i == 0) {
+				sum += i;
+			}
+		}
+		if (sum == n) {
+		   System.out.println("The number is a perfect number");
+		}
+		else {
+			System.out.println("The number is not a perfect number");
+		}
+		sc.close();
+	}
+
+}
+
+Q8) Check if a number is an armstrong number.
+Solution:
+import java.util.Scanner;
+
+public class Question08 {
+// Q. Check if a number is an Armstrong number.
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number to check:");
+		int num = sc.nextInt();
+		int temp = num;
+		int n = 0;
+		int sum = 0;
+		while(temp!=0) {
+			temp = temp/10;
+			n++;
+		}
+		System.out.println("Number of digits in the number is " + n);
+		temp = num;
+		while(temp!=0) {
+			int i = temp%10;
+			sum += Math.pow(i,n);
+			temp = temp/10;
+		}
+		System.out.println("The sum is: " + sum);
+		if (sum == num) {
+			System.out.println("The number is an armstrong number.");
+		}
+		else {
+			System.out.println("The number is not an armstrong number.");
+		}
+		sc.close();
+	}
+
+}
+
+Q9) Check if a number is prime or not
+Solution:
+import java.util.Scanner;
+
+public class Question09 {
+
+	public static void main(String[] args) {
+// Q. Check if a number is prime or not.
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number to check:");
+		int n = sc.nextInt();
+		int a = 0;
+		System.out.println("The factors of the number are:");
+		for(int i=1; i<=n; i++) {
+			if(n%i == 0) {
+				System.out.println(i);
+				a++;
+			}
+		}
+		System.out.println("The number of factors of " + n + " are " + a);
+		if(a>2) {
+			System.out.println("The number is not a prime number.");
+		}
+		else if((0<a) && (a==2)) {
+			System.out.println("The number is a prime number");
+		}
+		sc.close();
+
+	}
+
+}
+
+Q10) Print the sum of the digits of a number.
+Solution:
+import java.util.Scanner;
+
+public class Question10 {
+
+	public static void main(String[] args) {
+// Q. Print the sum of the digits of a number.
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number:");
+		int num = sc.nextInt();
+		int temp = num;
+		int sum = 0;
+		while(temp!=0) {
+			int i = temp%10;
+			sum += i;
+			temp = temp/10;
+		}
+		System.out.println("The sum of the digits of the number " + num + " is " + sum);
+        sc.close();
+	}
+
+}
+
+Q11) Check if a number is a palindrome
+Solution:
+import java.util.Scanner;
+
+public class Question11 {
+
+	public static void main(String[] args) {
+// Q. Check if a number is a palindrome.
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number:");
+		int num = sc.nextInt();
+		int n = num;
+		int reversenum = 0;
+		while (num!=0) {
+			int i = num%10;
+			reversenum = (reversenum*10) + i;
+			num = num/10;
+		}
+		System.out.println("The reversed number is " + reversenum);
+		if (reversenum == n) {
+			System.out.println("The number is a palindrome.");
+		}
+		else {
+			System.out.println("The number is not a palindrome.");
+		}
+		sc.close();
+	}
+
+}
+
+Q12) Calculate the HCF and LCM of 2 given numbers
+Solution:
+import java.util.Scanner;
+
+public class Question12 {
+
+	public static void main(String[] args) {
+// Q. Calculate the LCM and HCF for two given numbers.
+		int temp1, temp2, num1, num2, temp, hcf, lcm;
+	      Scanner scanner = new Scanner(System.in);
+
+	      System.out.print("Enter First Number: ");
+	      num1 = scanner.nextInt();
+	      System.out.print("Enter Second Number: ");
+	      num2 = scanner.nextInt();
+	      scanner.close();
+
+	      temp1 = num1;
+	      temp2 = num2;
+
+	      while(temp2 != 0){
+	         temp = temp2;
+	         temp2 = temp1%temp2;
+	         temp1 = temp;
+	      }
+
+	      hcf = temp1;
+	      lcm = (num1*num2)/hcf;
+
+	      System.out.println("HCF of input numbers: "+hcf);
+	      System.out.println("LCM of input numbers: "+lcm);
+	}
+
+}
+
+End.
